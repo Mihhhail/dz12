@@ -1,6 +1,7 @@
 @import "vars";
 @import "fonts";
 @import "reset";
+@import "libs";
 @import "global";
 
 .header {
@@ -11,8 +12,8 @@
     align-items: center;
   }
 }
+
 .menu {
-  
   margin-left: 150px;
   &__list {
     display: flex;
@@ -38,18 +39,16 @@
   &__link {
     position: relative;
   }
-  &__search{
+  &__search {
     display: flex;
     background: #edf1f4;
-    width: 50px;
-    height: 50px;
+    padding: 17px;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
   }
   &__link + .user-nav__link {
     padding-left: 60px;
-    
   }
   &__num {
     position: absolute;
@@ -83,6 +82,184 @@
     position: absolute;
     left: 50%;
     top: 25%;
+  }
+}
+
+.footer-top {
+  padding: 80px 0 60px 0;
+  border-bottom: 1px solid #dae4e9;
+  display: flex;
+
+  &__contact {
+    width: 200px;
+    margin-right: 100px;
+  }
+  &__nav {
+    width: 200px;
+    margin-right: 100px;
+  }
+  &__item-form {
+    max-width: 280px;
+  }
+  &__logo {
+    display: block;
+    margin-bottom: 20px;
+  }
+  &__title {
+    margin-bottom: 15px;
+  }
+  &__title {
+    font-size: 16px;
+    line-height: 21px;
+    @extend %dmsans-700;
+    text-transform: uppercase;
+    margin-top: 16px;
+  }
+  &__adress,
+  &__email,
+  &__phone,
+  &__text {
+    @extend %rubik-400;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #7b7b7b;
+    display: block;
+  }
+  &__adress {
+    line-height: 24px;
+  }
+  &__link {
+    line-height: 32px;
+    color: #7b7b7b;
+    @extend %rubik-400;
+  }
+  &__text {
+    margin-bottom: 30px;
+    line-height: 24px;
+  }
+  &__form-input {
+    background-color: #fef7f0;
+    border: none;
+    max-width: 170px;
+    width: 100%;
+    padding: 10px 15px;
+    &::placeholder {
+      color: #234969;
+      font-size: 12px;
+      @extend %dmsans-400;
+    }
+  }
+  &__form-btn {
+    @extend %dmsans-400;
+    font-size: 14px;
+    border: none;
+    background-color: #a3bbc8;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+}
+
+.footer__bottom {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #7b7b7b;
+  @extend %rubik-400;
+  font-size: 14px;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+}
+
+.footer-menu {
+  &__list {
+    display: flex;
+  }
+  & ul li + li:before {
+    content: "|";
+    padding-left: 15px;
+    padding-right: 10px;
+  }
+  &__list-link {
+    color: #7b7b7b;
+    letter-spacing: 0.2px;
+  }
+}
+.top-slider {
+  background-image: url(../images/slider/bg.png);
+  background-repeat: no-repeat;
+  height: 820px;
+  padding-top: 210px;
+  &__content {
+    // padding-left: 300px;
+  }
+  &__item {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__title {
+    max-width: 470px;
+    font-size: 72px;
+    line-height: 70px;
+    color: #243f4d;
+    @extend %rubik-500;
+    margin-bottom: 25px;
+  }
+  &__text {
+    max-width: 370px;
+    margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 30px;
+    @extend %rubik-400;
+    color: #436372;
+    letter-spacing: 0.6px;
+  }
+  &__link {
+    @extend %dmsans-400;
+    font-size: 15px;
+    line-height: 60px;
+    background-color: #a3bbc8;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    padding: 20px 120px 20px 20px;
+    height: 60px;
+    &::before {
+      background: url("../images/slider/arrow.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      content: "";
+      width: 30px;
+      height: 60px;
+      position: absolute;
+      right: 20px;
+    }
+  }
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+    li {
+      padding: 0 5px;
+      padding-bottom: 30px;
+      button {
+        border: none;
+        border-radius: 50%;
+        background: #fde3cc;
+        font-size: 10px;
+        line-height: 9px;
+        color: #243f4d;
+        @extend %rubik-500;
+        padding: 10px 12px;
+      }
+      &.slick-active {
+        button {
+          background: #fff;
+        }
+      }
+    }
   }
 }
 
